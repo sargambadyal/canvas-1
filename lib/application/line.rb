@@ -13,7 +13,7 @@ class Line
 
   def render graphics
     graphics.setColor(@color)
-    graphics.drawLine(@x1,@y1,@x2,@x2)
+    graphics.drawLine(@x1,@y1,@x2,@y2)
   end
 
 end

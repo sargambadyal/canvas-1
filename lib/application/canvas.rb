@@ -6,8 +6,8 @@ puts "#{RUBY_PLATFORM}"
 class Canvas < javax.swing.JPanel
 attr_reader :frame
   def initialize
-  @state = []
     super
+    @building_blocks = []
     @frame = javax.swing.JFrame.new("Canvas")
     @frame.setDefaultCloseOperation(javax.swing.JFrame::EXIT_ON_CLOSE)
     @frame.setSize(800, 600)
@@ -19,8 +19,8 @@ attr_reader :frame
 
   end
 
-  def add line
-    @state << line
+  def add building_block
+    @building_blocks << building_block
   end
 
   def paint
@@ -34,10 +34,10 @@ attr_reader :frame
 
   def render(graphics)
 
-    @state.each do |line|
-    line.render (graphics)
+    @building_blocks.each do |building_block|
+    building_block.render (graphics)
     end
-    
+
   end
 end
 
