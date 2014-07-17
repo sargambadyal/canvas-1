@@ -17,7 +17,7 @@ class Application
     # canvas.add(line2)
     # canvas.add(rectangle1)
     # canvas.add(rectangle2)
-    button = Button.new("Button 1",Color.red,200,200,400,400)
+    button = Button.new("Button 1",Color.red,200,200,400,200)
     canvas.add(button)
   end
 end

@@ -13,7 +13,7 @@ attr_reader :text
   end
 
   def clicked?(javaEvent)
-    if( javaEvent.getX>@x1 && javaEvent.getX < @x1+@width && @y1-20<javaEvent.getY && javaEvent.getY < @y1+@height-20 )
+    if( javaEvent.getX>@x1 && javaEvent.getX < @x1+@width && @y1<javaEvent.getY-20 && javaEvent.getY-20 < @y1+@height )
       Kernel.puts @text
     end
     end
