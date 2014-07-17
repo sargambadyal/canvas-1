@@ -4,7 +4,7 @@ import java.awt.Color
 
 puts "#{RUBY_PLATFORM}"
 class Canvas < javax.swing.JPanel
-attr_reader :frame
+attr_reader :frame,:building_blocks
   def initialize
     super
     @building_blocks = []
@@ -14,16 +14,12 @@ attr_reader :frame
     @frame.setVisible(true)
     @frame.add(self)
     @frame.validate
-    paint
-
-
+    @frame.repaint
   end
 
   def add building_block
     @building_blocks << building_block
-  end
-
-  def paint
+    @frame.validate
     @frame.repaint
   end
 
@@ -33,11 +29,9 @@ attr_reader :frame
   end
 
   def render(graphics)
-
     @building_blocks.each do |building_block|
-    building_block.render (graphics)
+      building_block.render (graphics)
     end
-
   end
 end
 

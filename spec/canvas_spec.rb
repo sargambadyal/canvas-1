@@ -21,22 +21,8 @@ describe 'Canvas' do
     allow(frame).to receive(:validate)
     allow(frame).to receive(:repaint)
     allow(javax.swing.JFrame).to receive(:new).and_return(frame)
-
-    expect(canvas.add(line1)).to eq([line1])
-  end
-
-  it 'repaints the canvas ' do
-    frame = double("Frame")
-    allow(frame).to receive(:setDefaultCloseOperation).with(javax.swing.JFrame::EXIT_ON_CLOSE)
-    allow(frame).to receive(:setSize).with(800, 600)
-    allow(frame).to receive(:setVisible).with(true)
-    allow(frame).to receive(:add).with(any_args)
-    allow(frame).to receive(:validate)
-    allow(frame).to receive(:repaint)
-    allow(javax.swing.JFrame).to receive(:new).and_return(frame)
-
-    expect(canvas.frame).to receive(:repaint)
-    canvas.paint
+    canvas.add(line1)
+    expect(canvas.building_blocks).to eq([line1])
   end
 
   it 'paints a line on canvas ' do
